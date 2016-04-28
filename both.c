@@ -5,4 +5,4 @@
 #include <netinet/in.h>
 
 int startsWith(s1, s2) {
-    return ((
+    return (memcmp(
