@@ -21,3 +21,4 @@ int connect(char[] address, char[] port) {
     flags.ai_socktype = SOCKET_STREAM;
     getaddrinfo(address, port, &flags, &info);
     int socket = socket(info->ai_family, info->ai_socktype, info->ai_protocol);
+    bind(socket, 
