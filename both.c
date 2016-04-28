@@ -10,5 +10,14 @@ int startsWith(char[] s1, char[] s2) {
 
 char *concat(s1, s2) {
     char *ret;
-    ret = (char *) malloc(strlen(s1) + strlen(s2) + 1)
-    
+    ret = (char *) malloc(strlen(s1) + strlen(s2) + 1);
+    return ret;
+}
+
+int connect(char[] address, char[] port) {
+    struct addrinfo *info, flags;
+    memset(&flags, 0, sizeof(flags));
+    flags.ai_family = AF_UNSPEC;
+    flags.ai_socktype = SOCKET_STREAM;
+    getaddrinfo(address, port, &flags, &info);
+    int socket = socket(info->ai_family, info->ai_socktype, info->ai_protocol);
