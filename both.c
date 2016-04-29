@@ -37,10 +37,20 @@ int provide(char[] port) {
     return accept(socket, NULL, NULL);
 }
 
-sendAll(int socket, char[] *msg) {
+int sendAll(int socket, char[] *msg) {
     int left = sizeof(msg);
+    int sent = 0;
+    int did;
     while (left > 0) {
-        int did = send(socket, msg, sizeof(msg), 
+        did = send(socket, msg + did, left, 0);
+        if (did == -1) {
+            break;
+        }
+        left -= did;
+        sent += did;
+    }
+    return did==-1?0:1;
+}
 
 void main() {
     //
