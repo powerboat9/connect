@@ -34,7 +34,6 @@ int provide(char[] port) {
     int socket = socket(info->ai_family, info->ai_socktype, info->ai_protocol);
     bind(socket, info->ai_addr, info->ai_addrlen);
     listen(socket, 5);
-    accept(
-    return newSocket;
+    return accept(socket, NULL, NULL);
 }
     
