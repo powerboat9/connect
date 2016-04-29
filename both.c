@@ -36,4 +36,11 @@ int provide(char[] port) {
     listen(socket, 5);
     return accept(socket, NULL, NULL);
 }
+
+sendAll(socket, msg) {
+    
+
+void main() {
+    //
+}
     
