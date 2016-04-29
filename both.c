@@ -52,6 +52,10 @@ int sendAll(int socket, char[] *msg) {
     return did==-1?0:1;
 }
 
+int recvAll(int socket, char[] *buffer, int bufferlen) {
+    return recv(socket, buffer, bufferlen, MSG_WAITALL);
+}
+
 void main() {
     //
 }
